@@ -1,0 +1,104 @@
+.clearfix{
+	clear: both;
+}
+
+ul {
+	list-style-type: none;
+	position: fixed;
+}
+li{margin-right: 4px; float: left;}
+
+a{
+	text-decoration: none;
+	color: rgb(142, 142, 142);
+	font: 13px Arial;
+	padding: 10px;
+}
+a:hover{
+	color: blue;
+}
+
+.aviasells a {
+    background-image: url('plane11.png');
+    background-position: top center; 
+    background-size: 45px 45px;
+    background-repeat: no-repeat;
+    padding-top: 50px; 
+    padding-bottom: 10px;
+    display: block;
+}
+
+.aviasells a:hover {
+    background-image: url('plane12.png');
+    background-position: top center; 
+    background-size: 45px 45px;
+    background-repeat: no-repeat;
+}
+
+.charters a {
+    background-image: url('plane21.png');
+    background-position: top center; 
+    background-size: 65px 36px;
+    background-repeat: no-repeat;
+    padding-top: 50px; 
+    padding-bottom: 10px;
+    display: block;
+}
+
+.charters a:hover {
+    background-image: url('plane22.png');
+    background-position: top center; 
+    background-size: 65px 36px;
+    background-repeat: no-repeat;
+}
+
+.train a {
+    background-image: url('train1.png');
+    background-position: top center; 
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    padding-top: 50px; 
+    padding-bottom: 10px;
+    display: block;
+}
+
+.train a:hover {
+    background-image: url('train2.png');
+    background-position: top center; 
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+}
+
+.hotels a {
+    background-image: url('hotels1.png');
+    background-position: top center; 
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    padding-top: 50px; 
+    padding-bottom: 10px;
+    display: block;
+}
+
+.hotels a:hover {
+    background-image: url('hotels2.png');
+    background-position: top center; 
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+}
+
+.turism a {
+    background-image: url('turism1.png');
+    background-position: top center; 
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    padding-top: 50px; 
+    padding-bottom: 10px;
+    display: block;
+}
+
+.turism a:hover {
+    background-image: url('turism2.png');
+    background-position: top center; 
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+}

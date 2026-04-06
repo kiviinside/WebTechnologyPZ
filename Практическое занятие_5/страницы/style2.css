@@ -1,0 +1,32 @@
+table {
+    border-collapse: collapse;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+th {
+    padding: 10px;
+    border-bottom: 3px solid black; 
+}
+
+.weekend-header {
+    color: gray;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+.weekend-cell a {
+    color: gray;
+}
+
+
+td a:hover {
+    color: red;
+}

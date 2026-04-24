@@ -1,0 +1,7 @@
+input{
+    display: flex;
+}
+
+.disabled{
+    background-color: blanchedalmond;
+}

@@ -1,0 +1,49 @@
+body{
+    margin-left: 700px;
+    margin-right: 700px;
+    border: 2px solid black;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 50px;
+}
+
+h1{
+    text-align: center;
+    font-size: 35px;
+}
+
+h2{
+    text-align: center;
+    color: deeppink;
+}
+
+p{font-family: arial;}
+
+.usability{
+    text-indent: 30px;
+    text-align: justify;
+}
+
+/* Стили только для ссылок "Подробнее..." */
+.more-link{
+    display: block;
+    text-decoration: none;
+    color: deeppink;
+    text-align: right;
+}
+
+.more-link:hover{
+    color: black;
+    font-weight: bold;
+}
+
+.green{
+    color: rgb(26, 187, 26); 
+    font-weight: bold;
+}
+
+/* Стили для заголовков списков - только отступ */
+.list-title{
+    text-indent: 30px;
+    margin-bottom: 5px;
+}

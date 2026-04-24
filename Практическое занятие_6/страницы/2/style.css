@@ -1,0 +1,30 @@
+body{
+    font-family: 'Times New Roman';
+    border: 2px solid black;
+    padding: 20px;
+}
+
+h1{
+    color: blue;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.image {
+    width: 250px;
+    height: 130px;
+    flex-shrink: 0;
+    border: 1px solid black;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.link{
+    text-align: right;
+}

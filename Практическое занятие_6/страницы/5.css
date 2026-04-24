@@ -1,0 +1,17 @@
+body{color: darkgreen;
+    border: 2px solid darkgreen;
+    border-style: dashed;
+    border-radius: 20px;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+h1{text-align: center;}
+h2{
+    text-align: center;
+    text-decoration: underline;
+}
+p{
+    text-align: right;
+    font-family: Arial;
+    padding-left: 30px;
+}

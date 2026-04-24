@@ -104,17 +104,27 @@ ul{
 }
 
 .menu8 {
-	list-style-type: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #FFA500;
+    overflow: hidden;
 }
-.menu8 li{margin-right: 4px; float: left;}
-.menu8 a{
-	text-decoration: none;
-	color: rgb(255, 255, 255);
-	font: 13px Arial;
-	padding: 5px;
-	background-color: chocolate;
+
+.menu8 li {
+    float: left;
+    margin: 0;
 }
-.menu8 a:hover, .menu8 a.active{
-	color: white;
-	background-color: rgb(45, 45, 45);
+
+.menu8 a {
+    display: block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font: bold 13px Arial;
+    padding: 12px 24px;
+    text-align: center;
+}
+
+.menu8 a:hover {
+    background-color: #E65100;
 }

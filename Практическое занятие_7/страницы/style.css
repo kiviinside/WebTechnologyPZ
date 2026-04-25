@@ -24,9 +24,11 @@ input[type="button"]{
     background-color: blanchedalmond;
     box-shadow: 1.5px 1.5px 1.5px 0px #727272;
     border: none;
+    cursor: pointer;
 }
 
 button{
+    display: flex;
     width: 150px;
     height: 20px;
     margin-left: 10px;
@@ -38,4 +40,44 @@ button{
     padding: 0;               /* Убираем внутренние отступы */
     border: none;             /* Убираем рамку, если нужно */
     overflow: hidden;  
+    cursor: pointer;
+}
+
+form {
+    border: 2px dotted #999;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #fff;
+    margin-top: 30px;
+}
+#myInput {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 200px;
+}
+
+#myInput:focus {
+    outline: none;
+    border-color: #666;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+
+label:hover {
+    color: #000;
+}
+
+.submit-btn:hover {
+    background-color: #d0d0d0;
+}
+
+.submit-btn:active {
+    background-color: #c0c0c0;
 }

@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #1E90FF; /* Синий фон */
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman';
 }
 
 .container {
@@ -39,7 +39,6 @@ h2 {
     flex: 1;
     padding: 8px;
     border: 1px solid #CCCCCC;
-    border-radius: 3px;
     background-color: white;
 }
 
@@ -65,7 +64,7 @@ h2 {
     width: 100%;
     padding: 12px;
     margin-top: 30px;
-    background: linear-gradient(to right, #ADD8E6, #87CEEB);
+    background: #5599b0;
     border: none;
     border-radius: 20px;
     color: white;
@@ -73,8 +72,10 @@ h2 {
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .submit-button:hover {
-    background: linear-gradient(to right, #87CEEB, #ADD8E6);
+    color: #235160;
+    background: #95c4d4;
 }

@@ -1,26 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+    <meta charset="UTF-8">
     <title>input и textarea</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Базовая форма — все элементы в стеке -->
     <form action="" method="get">
         <input type="text" placeholder="Плейсхолдер">
         <input type="text" value="Value">
         <input type="text" disabled class="disabled" placeholder="disabled">
         <input type="password" value="22222222">
-        <textarea placeholder="Введите текст"></textarea>
-        <input type="button" value="Кнопка через тег input">
-        <button type="submit">Кнопка через тег button</button>
+        <textarea placeholder="Введите текст" class="CourierNew"></textarea>
+        <input type="button" class="btn-standard" value="Кнопка через тег input">
+        <button type="submit" class="btn-flex">Кнопка через тег button</button>
     </form>
+
+    <!-- Задание "На input с label" -->
     <form action="" method="GET">
-        <input type="text" placeholder="Плейсхолдер">
-        <label for="myInput">Это метка для инпута - нажмите на меня - и инпут получит фокус!</label>
-        <button type="submit">Отправить на сервер</button>
+        <div class="inline-input-label">
+            <input type="text" id="myInput" placeholder="Плейсхолдер">
+            <label for="myInput">Это метка для инпута - нажмите на меня - и инпут получит фокус!</label>
+        </div>
+        <input type="button" class="btn-standard" value="Отправить на сервер">
     </form>
+
+    <!-- Задание "На checkbox и radio" -->
     <form action="" method="get">
-        <input type="checkbox" value="">
+        <div class="inline-input-label">
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox" class="redBorder">Это метка для чекбокса: нажмите на меня - чекбокс сменит галочку!</label>
+        </div>
+
+        <div class="inline-input-label">
+            <input type="checkbox" id="checkbox2" checked>
+            <label for="checkbox2" class="redBorder">Я отмечен по умолчанию!</label>
+        </div>
+
+        <div class="inline-input-label">
+            <input type="checkbox" id="checkbox3" disabled>
+            <label for="checkbox3" class="redBorder">Я disabled!</label>
+        </div>
+
+        <div style="margin-top: 12px;">
+            Это группа радиокнопок - только одна из них может быть отмечена!<br><br>
+            <div class="inline-input-label">
+                <input type="radio" name="group1" id="radio1">
+                <label for="radio1" class="redBorder">Это метка для радио</label>
+            </div>
+            <div class="inline-input-label">
+                <input type="radio" name="group1" id="radio2">
+                <label for="radio2" class="redBorder">Это метка для радио</label>
+            </div>
+        </div>
+
+        <input type="button" class="btn-standard" value="Отправить на сервер">
     </form>
+
+    <!-- ================== НОВЫЕ ЗАДАНИЯ ================== -->
+
+    <!-- Задание "На select" -->
+    <form action="" method="get">
+        <div class="select-group">
+            <select size="1">
+                <option>Минск</option>
+                <option>Москва</option>
+                <option>Киев</option>
+                <option selected>Нью Йорк</option>
+                <option>Варшава</option>
+
+            </select>
+            <select size="3">
+                <option>Минск</option>
+                <option>Москва</option>
+                <option>Киев</option>
+                <option selected>Нью Йорк</option>
+                <option>Варшава</option>
+            </select>
+            <select size="4">
+                <option>Минск</option>
+                <option>Москва</option>
+                <option>Киев</option>
+                <option selected>Нью Йорк</option>
+                <option>Варшава</option>
+            </select>
+        </div>
+        <input type="button" class="btn-standard" value="Отправить на сервер">
+    </form>
+
+    <!-- Задание "На file" -->
+    <form action="" method="get" enctype="multipart/form-data">
+        <div class="file-input-wrapper">
+            <input type="file" id="fileInput">
+            <label for="fileInput" class="file-label">Обзор...</label>
+            <span class="file-status">Файл не выбран.</span>
+        </div>
+        <input type="button" class="btn-standard" value="Отправить на сервер">
+    </form>
+
+    <!-- Задание "На fieldset и legend" -->
+    <form action="" method="get">
+        <fieldset>
+            <legend>Выберите кнопочку</legend>
+            <div class="radio-inline-group">
+                <input type="radio" name="choice1" id="r1">
+                <input type="radio" name="choice1" id="r2">
+                <input type="radio" name="choice1" id="r3">
+                <input type="text" placeholder="Ваше имя..." style="width: 200px; margin-left: 10px;">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Выберите еще кнопочку</legend>
+            <div class="radio-inline-group">
+                <input type="radio" name="choice2" id="r4">
+                <input type="radio" name="choice2" id="r5">
+                <input type="radio" name="choice2" id="r6">
+                <input type="radio" name="choice2" id="r7">
+                <input type="radio" name="choice2" id="r8">
+            </div>
+        </fieldset>
+
+        <input type="button" class="btn-standard" value="Отправить на сервер">
+    </form>
+        <!-- Задание "На resize" -->
+    <form action="" method="get">
+        <div class="resize-box" style="resize: both; min-width: 200px; max-width: 300px; min-height: 50px; max-height: 100px;">
+            Ограничена ширина и высота
+        </div>
+
+        <div class="resize-box" style="resize: none;">
+        </div>
+
+        <div class="resize-box" style="resize: vertical;">
+        </div>
+
+        <div class="resize-box" style="resize: horizontal;">
+        </div>
+    </form>
+
 </body>
 </html>

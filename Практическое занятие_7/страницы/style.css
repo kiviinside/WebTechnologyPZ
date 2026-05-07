@@ -1,48 +1,11 @@
-input{
-    display: flex;
-    margin: 10px;
-    box-shadow: inset 1.5px 1.5px 0 0 #727272;
-    border: 0.5px solid black;
+/* === ОБЩИЕ НАСТРОЙКИ === */
+body {
+    font-family: 'Times New Roman';
+    margin: 0;
+    padding: 20px;
 }
 
-.disabled{
-    background-color: blanchedalmond;
-    box-shadow: inset 1.5px 1.5px 0 0 #727272;
-    border: 0.5px solid black;
-}
-
-textarea{
-    width: 180px;
-    height: 70px;
-    margin-left: 10px;
-    box-shadow: inset 1.5px 1.5px 0 0 #727272;
-    font-family:'Courier New';
-    border: 0.5px solid black;
-}
-
-input[type="button"]{
-    background-color: blanchedalmond;
-    box-shadow: 1.5px 1.5px 1.5px 0px #727272;
-    border: none;
-    cursor: pointer;
-}
-
-button{
-    display: flex;
-    width: 150px;
-    height: 20px;
-    margin-left: 10px;
-    background-color: blanchedalmond;
-    box-shadow: 1.5px 1.5px 1.5px 0px #727272;
-    text-align: center;       /* Выравнивание текста по центру */
-    line-height: 20px;        /* Высота строки = высоте кнопки */
-    white-space: nowrap;      /* Запрещаем перенос текста */
-    padding: 0;               /* Убираем внутренние отступы */
-    border: none;             /* Убираем рамку, если нужно */
-    overflow: hidden;  
-    cursor: pointer;
-}
-
+/* === ФОРМА — пунктирная рамка === */
 form {
     border: 2px dotted #999;
     padding: 20px;
@@ -50,12 +13,106 @@ form {
     background-color: #fff;
     margin-top: 30px;
 }
-#myInput {
+
+/* === ВСЕ ИНПУТЫ И TEXTAREA — ВЕРТИКАЛЬНЫЙ СТЕК === */
+form > * {
+    display: block;
+    margin-bottom: 12px;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    width: 100%;
+    max-width: 300px;
     padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: inset 1.5px 1.5px 0 0 #727272;
+    border: 0.5px solid black;
+    background-color: white;
+}
+
+.CourierNew{
+    font-family: 'Courier New';
+}
+
+input.disabled {
+    background-color: blanchedalmond;
+}
+
+textarea {
+    height: 70px;
+    resize: vertical;
+}
+
+/* === КНОПКИ — как у вас, но выровнены СЛЕВА === */
+.btn-standard {
+    background-color: blanchedalmond;
+    box-shadow: 1.5px 1.5px 1.5px 0px #727272;
+    border: none;
+    cursor: pointer;
+    padding: 6px 12px;
     font-size: 14px;
-    min-width: 200px;
+    font-family: inherit;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.btn-flex{
+    background-color: blanchedalmond;
+    box-shadow: 1.5px 1.5px 1.5px 0px #727272;
+    border: none;
+    cursor: pointer;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-family: inherit;
+    white-space: nowrap;
+    display: flex;
+    vertical-align: middle;
+}
+
+
+.btn-flex:hover {
+    background-color: #d0d0d0;
+}
+
+.btn-flex:active {
+    background-color: #c0c0c0;
+}
+
+.btn-standard:hover {
+    background-color: #d0d0d0;
+}
+
+.btn-standard:active {
+    background-color: #c0c0c0;
+}
+
+/* === МЕТКИ СПРАВА ОТ ИНПУТОВ (для заданий) === */
+.inline-input-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.inline-input-label label {
+    cursor: pointer;
+    user-select: none;
+    font-size: 14px;
+}
+
+.redBorder {
+    border: 3px dotted red;
+}
+
+/* === ПОЛЕ #myInput — отдельно, чтобы не ломать общий стиль === */
+#myInput {
+    width: auto;
+    min-width: 50px;
+    border: 1px solid #ccc;
+    font-size: 14px;
 }
 
 #myInput:focus {
@@ -64,20 +121,136 @@ form {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-label {
-    font-size: 14px;
-    color: #333;
+/* ================================================
+   ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ НОВЫХ ЗАДАНИЙ
+   ================================================ */
+
+/* === СТИЛИ ДЛЯ SELECT (задание "На select") === */
+.select-group {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.select-group select {
+    padding: 4px;
+    border: 1px solid #999;
+    background-color: white;
+    box-shadow: inset 1px 1px 0 0 #727272;
+}
+
+.select-group select:first-child {
+    width: 100px;
+}
+
+.select-group select:nth-child(2),
+.select-group select:nth-child(3) {
+    width: 120px;
+    height: auto;
+}
+
+/* === СТИЛИ ДЛЯ FILE INPUT (задание "На file") === */
+.file-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.file-input-wrapper input[type="file"] {
+    display: none; /* Скрываем стандартный input */
+}
+
+.file-label {
+    background-color: blanchedalmond;
+    box-shadow: 1.5px 1.5px 1.5px 0px #727272;
+    border: none;
     cursor: pointer;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-family: inherit;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-label:hover {
-    color: #000;
-}
-
-.submit-btn:hover {
+.file-label:hover {
     background-color: #d0d0d0;
 }
 
-.submit-btn:active {
+.file-label:active {
     background-color: #c0c0c0;
+}
+
+.file-status {
+    font-size: 14px;
+    color: #333;
+}
+
+/* === СТИЛИ ДЛЯ FIELDSET И LEGEND (задание "На fieldset и legend") === */
+fieldset {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+legend {
+    padding: 0 5px;
+    font-size: 14px;
+}
+
+.radio-inline-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.radio-inline-group input[type="radio"] {
+    margin: 0;
+}
+
+.radio-inline-group label {
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+}
+
+/* Убираем лишние отступы у последних элементов в форме */
+form > *:last-child {
+    margin-bottom: 0;
+}
+
+/* === СТИЛИ ДЛЯ ЗАДАНИЯ "НА RESIZE" === */
+.resize-box {
+    width: 200px;
+    height: 60px;
+    border: 1px solid #ccc;
+    border-left: 3px solid #999; /* имитация левой границы как на скрине */
+    background-color: white;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    overflow: auto; /* чтобы контент не вылезал при ресайзе */
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+}
+
+/* Убираем стандартный outline при фокусе, если нужно */
+.resize-box:focus {
+    outline: none;
+}
+
+/* Для блоков с resize — добавляем курсор при наведении на уголок */
+.resize-box[style*="resize"] {
+    cursor: default;
+}
+
+/* Специально для блока с текстом — выравниваем текст сверху */
+.resize-box:first-child {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
 }

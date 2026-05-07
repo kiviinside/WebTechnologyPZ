@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Анкета посетителя ресторана</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <form class="restaurant-survey">
+        <legend>Анкета посетителя ресторана</legend>
+
+        <!-- Контактная информация -->
+        <fieldset>
+            <legend>Контактная информация</legend>
+            <div class="form-row">
+                <label for="name">Имя</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="form-row">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-row">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-row">
+                <label for="visit-date">Дата посещения</label>
+                <input type="date" id="visit-date" name="visit_date">
+            </div>
+        </fieldset>
+
+        <!-- Персональная информация -->
+        <fieldset>
+            <legend>Персональная информация</legend>
+            <div class="form-row">
+                <label for="age">Возраст</label>
+                <input type="number" id="age" name="age" min="1" max="100" step="1">
+            </div>
+            <div class="form-row">
+                <label for="cuisine">Любимая кухня</label>
+                <select id="cuisine" name="cuisine">
+                    <option value="">Выберите...</option>
+                    <option value="russian">Русская</option>
+                    <option value="italian">Итальянская</option>
+                    <option value="asian">Азиатская</option>
+                    <option value="european">Европейская</option>
+                    <option value="other">Другая</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="desired-dishes">Какие блюда Вы хотели бы увидеть в меню?</label>
+                <textarea id="desired-dishes" name="desired_dishes" rows="4"></textarea>
+            </div>
+        </fieldset>
+
+        <!-- Оценка нашего заведения -->
+        <fieldset>
+            <legend>Оценка нашего заведения</legend>
+
+            <div class="form-group">
+                <p><strong>Почему Вы выбрали наше заведение?</strong></p>
+                <label><input type="radio" name="reason" value="near_home"> Недалеко от дома/работы</label><br>
+                <label><input type="radio" name="reason" value="saw_ad"> Увидел рекламу</label><br>
+                <label><input type="radio" name="reason" value="recommended"> Посоветовали</label><br>
+                <label><input type="radio" name="reason" value="price_quality"> Оптимальное соотношение цены и качества</label>
+            </div>
+
+            <div class="form-group">
+                <p><strong>Вы будете рекомендовать наше заведение своим знакомым?</strong></p>
+                <label><input type="radio" name="recommend" value="yes"> Да</label><br>
+                <label><input type="radio" name="recommend" value="no"> Нет</label>
+            </div>
+        </fieldset>
+
+        <button type="submit" class="submit-btn">Отправить</button>
+    </form>
+</body>
+</html>

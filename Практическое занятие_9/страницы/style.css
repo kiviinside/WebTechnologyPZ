@@ -1,0 +1,59 @@
+/* Основной синий фон страницы */
+body {
+    background-color: #0056b3; 
+    padding: 20px;
+    margin: 0;
+}
+
+/* Контейнеры заданий (чуть светлее основного фона) */
+.flex-container {
+    display: flex;
+    background-color: #1a75ff; 
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    min-height: 150px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Белые блоки внутри (флекс-элементы) */
+.item {
+    background-color: #ffffff; 
+    width: 60px;
+    height: 60px;
+    margin: 8px;
+    border-radius: 4px;
+}
+
+/* Стилизация согласно теории из задания */
+
+/* flex-direction: элементы в ряд [cite: 4] */
+.direction-row {
+    flex-direction: row; 
+}
+
+/* justify-content: распределение по главной оси [cite: 10, 14] */
+.justify-between {
+    justify-content: space-between; 
+}
+
+/* align-items: выравнивание по базовой линии [cite: 18] */
+.align-baseline {
+    align-items: baseline; 
+}
+
+/* align-self: индивидуальное выравнивание элементов [cite: 19] */
+.align-self-container {
+    align-items: flex-start;
+    min-height: 200px;
+}
+.self-start { align-self: flex-start; }
+.self-center { align-self: center; }
+.self-end { align-self: flex-end; }
+
+/* flex-wrap и align-content: перенос строк и выравнивание рядов [cite: 21, 30] */
+.wrap-content {
+    flex-wrap: wrap; 
+    align-content: space-around; 
+    height: 300px; 
+}

@@ -1,11 +1,11 @@
-/* === ОБЩИЕ НАСТРОЙКИ === */
+
 body {
     font-family: 'Times New Roman';
     margin: 0;
     padding: 20px;
+    padding-bottom: 150px;
 }
 
-/* === ФОРМА — пунктирная рамка === */
 form {
     border: 2px dotted #999;
     padding: 20px;
@@ -14,7 +14,6 @@ form {
     margin-top: 30px;
 }
 
-/* === ВСЕ ИНПУТЫ И TEXTAREA — ВЕРТИКАЛЬНЫЙ СТЕК === */
 form > * {
     display: block;
     margin-bottom: 12px;
@@ -45,7 +44,6 @@ textarea {
     resize: vertical;
 }
 
-/* === КНОПКИ — как у вас, но выровнены СЛЕВА === */
 .btn-standard {
     background-color: blanchedalmond;
     box-shadow: 1.5px 1.5px 1.5px 0px #727272;
@@ -89,7 +87,6 @@ textarea {
     background-color: #c0c0c0;
 }
 
-/* === МЕТКИ СПРАВА ОТ ИНПУТОВ (для заданий) === */
 .inline-input-label {
     display: flex;
     align-items: center;
@@ -107,7 +104,6 @@ textarea {
     border: 3px dotted red;
 }
 
-/* === ПОЛЕ #myInput — отдельно, чтобы не ломать общий стиль === */
 #myInput {
     width: auto;
     min-width: 50px;
@@ -121,11 +117,6 @@ textarea {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* ================================================
-   ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ НОВЫХ ЗАДАНИЙ
-   ================================================ */
-
-/* === СТИЛИ ДЛЯ SELECT (задание "На select") === */
 .select-group {
     display: flex;
     gap: 10px;
@@ -150,7 +141,6 @@ textarea {
     height: auto;
 }
 
-/* === СТИЛИ ДЛЯ FILE INPUT (задание "На file") === */
 .file-input-wrapper {
     display: flex;
     align-items: center;
@@ -159,7 +149,7 @@ textarea {
 }
 
 .file-input-wrapper input[type="file"] {
-    display: none; /* Скрываем стандартный input */
+    display: none; 
 }
 
 .file-label {
@@ -188,7 +178,6 @@ textarea {
     color: #333;
 }
 
-/* === СТИЛИ ДЛЯ FIELDSET И LEGEND (задание "На fieldset и legend") === */
 fieldset {
     border: 1px solid #ccc;
     padding: 15px;
@@ -218,37 +207,32 @@ legend {
     user-select: none;
 }
 
-/* Убираем лишние отступы у последних элементов в форме */
 form > *:last-child {
     margin-bottom: 0;
 }
 
-/* === СТИЛИ ДЛЯ ЗАДАНИЯ "НА RESIZE" === */
 .resize-box {
     width: 200px;
     height: 60px;
     border: 1px solid #ccc;
-    border-left: 3px solid #999; /* имитация левой границы как на скрине */
+    border-left: 3px solid #999; 
     background-color: white;
     padding: 8px;
     margin-bottom: 15px;
     box-sizing: border-box;
-    overflow: auto; /* чтобы контент не вылезал при ресайзе */
+    overflow: auto; 
     font-family: 'Courier New', monospace;
     font-size: 14px;
 }
 
-/* Убираем стандартный outline при фокусе, если нужно */
 .resize-box:focus {
     outline: none;
 }
 
-/* Для блоков с resize — добавляем курсор при наведении на уголок */
 .resize-box[style*="resize"] {
     cursor: default;
 }
 
-/* Специально для блока с текстом — выравниваем текст сверху */
 .resize-box:first-child {
     display: flex;
     align-items: flex-start;

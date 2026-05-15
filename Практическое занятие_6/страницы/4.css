@@ -5,10 +5,17 @@ body{
 }
 
 h1{
-    text-align: center;
+    text-indent: 10px;
+    padding-left: 10px;
+}
+h2{
+    text-indent: 10px;
+    padding-left: 10px;
 }
 p{
     text-indent: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .menu {
     padding: 0;

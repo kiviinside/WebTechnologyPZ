@@ -1,0 +1,52 @@
+/* Основная секция с позиционированием элементов по центру */
+.expert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 77px;
+    height: 100%;
+}
+
+/* Стили заголовка (переопределение в inline-block) */
+.expert__title {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-family: sans-serif;
+}
+
+/* Контейнер для колонок формы */
+.expert__form-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px; /* Отступ между колонками */
+    width: 100%;
+}
+
+/* Колонки формы, являющиеся флекс-контейнерами для чекбоксов */
+.expert__form-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Стили для меток (labels) */
+.expert__label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-family: sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Стили для самих чекбоксов */
+.expert__checkbox {
+    margin-right: 10px;
+}
+img{
+    height: 50px;
+    width: 50px;
+}

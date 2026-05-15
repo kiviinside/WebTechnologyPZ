@@ -1,0 +1,25 @@
+body{
+    font-family: 'Times New Roman';
+}
+
+h1{
+    color: blue;
+}
+.link{
+    text-align: right;
+    color: blue;
+}
+.link a{
+    color: blue;
+    text-decoration: none;
+}
+
+.place{
+    border: 2px solid black;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 50px;
+}

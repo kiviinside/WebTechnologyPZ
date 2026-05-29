@@ -47,6 +47,7 @@
     border: 1px solid #e1e1e1;
     color: #333;
     box-sizing: border-box; /* Чтобы padding не влиял на ширину */
+    text-align: center;
 }
 
 /* Модификаторы ширины [cite: 31, 35] */
@@ -76,3 +77,5 @@ img{
     height: 50px;
     width: 50px;
 }
+
+::placeholder{text-align: center;}

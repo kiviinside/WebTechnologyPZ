@@ -1,0 +1,414 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #1D1D1D;
+    overflow-x: hidden; 
+}
+
+.container {
+    max-width: 980px; /* Сужено под сетку внутренней страницы ресторана */
+    width: 100%; 
+    margin: 0 auto; 
+    padding: 0 8px;
+}
+
+/* =========================================
+   ШАПКА (HEADER)
+   ========================================= */
+.header {
+    background: #ffffff;
+    height: 72px;
+    box-shadow: 0px 0px 16px rgba(38, 38, 38, 0.16);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+}
+
+.header__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    height: 24px;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.btn-login {
+    border: 1px solid #E0E0E0;
+    padding: 10px 16px;
+    border-radius: 2px;
+    color: #1D1D1D;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.basket-link img {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+/* =========================================
+   HERO БЛОК РЕСТОРАНА
+   ========================================= */
+.restaurant-hero {
+    background-image: url('images/11.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 80px 0;
+}
+
+.restaurant-card {
+    background: #FFFFFF;
+    padding: 38px;
+    max-width: 390px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.restaurant-card h1 {
+    font-size: 36px;
+    margin: 0 0 12px 0;
+    font-weight: 400;
+}
+
+.restaurant-card__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    color: #626262;
+}
+
+.restaurant-card__time {
+    background: #1D1D1D;
+    color: #FFF;
+    padding: 8px 16px;
+    border-radius: 16px;
+    align-self: flex-start;
+    font-size: 13px;
+}
+
+/* =========================================
+   НАВИГАЦИЯ ПО КАТЕГОРИЯМ
+   ========================================= */
+.menu-categories {
+    border-bottom: 1px solid rgba(29, 29, 29, 0.1);
+    background: #FFF;
+    position: sticky;
+    top: 72px;
+    z-index: 90;
+}
+
+.menu-categories__inner {
+    display: flex;
+    gap: 40px;
+    overflow-x: auto; /* Скролл на мобилках */
+    white-space: nowrap;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+/* Скрываем полосу прокрутки для красивого вида */
+.menu-categories__inner::-webkit-scrollbar {
+    display: none;
+}
+
+.menu-categories__item {
+    text-decoration: none;
+    color: #626262;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.menu-categories__item.active,
+.menu-categories__item:hover {
+    color: #327432;
+    font-weight: bold;
+}
+
+/* =========================================
+   МЕНЮ / СЕТКА БЛЮД
+   ========================================= */
+.menu-section {
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+.menu-section h2 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 32px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки на десктопе */
+    gap: 24px;
+}
+
+.dish-card {
+    border: 1px solid rgba(29, 29, 29, 0.1);
+    border-radius: 2px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #FFF;
+    min-height: 160px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.dish-card:hover {
+    border-color: rgba(29, 29, 29, 0.4);
+}
+
+.dish-card__info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    padding-right: 16px;
+}
+
+.dish-card h3 {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.dish-card__desc {
+    margin: 0;
+    font-size: 13px;
+    color: #626262;
+    flex-grow: 1;
+}
+
+.dish-card__price {
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 16px;
+}
+
+.dish-card__img {
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+/* =========================================
+   ФУТЕР
+   ========================================= */
+.footer {
+    background-color: #262626;
+    color: #ffffff;
+    width: 100%;
+    padding: 56px 0 0 0; 
+}
+
+.footer .container {
+    padding: 0 16px 40px 16px; 
+}
+
+.footer__logo img {
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+.footer__divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 40px 0;
+}
+
+.footer__main {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer__col {
+    flex: 1;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.footer__lang-select {
+    background-color: #3B3B3B;
+    border-radius: 2px;
+    padding: 10px;
+    width: 220px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.footer__lang-select select {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 13px;
+    width: 100%;
+    outline: none;
+}
+
+.footer__hashtag p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer__hashtag span {
+    color: #5EAA5E; 
+}
+
+.footer__apps {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.footer__apps img {
+    height: 40px;
+}
+
+.footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer__bottom p, .footer__bottom a {
+    font-size: 11px;
+    color: #FFF;
+    margin: 0;
+}
+
+/* Кнопка наверх */
+.btn-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #5EAA5E;
+    width: 48px;
+    height: 48px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.btn-to-top img {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* =========================================
+   АДАПТИВНОСТЬ (МЕДИА-ЗАПРОСЫ)
+   ========================================= */
+
+/* --- ПЛАНШЕТ (До 768px) --- */
+@media (max-width: 768px) {
+    .restaurant-hero {
+    padding: auto;
+}
+    
+    .restaurant-card {
+        max-width: 100%;
+        box-shadow: none;
+        padding: 24px 8px;
+        text-align: center;
+    }
+    
+    .restaurant-card h1 {
+        font-size: 28px;
+    }
+    
+    .restaurant-card__meta {
+        align-items: center;
+    }
+    
+    .restaurant-card__time {
+        align-self: center;
+    }
+
+    .menu-categories__inner {
+        gap: 24px;
+        padding: 16px 8px;
+    }
+
+    /* На планшете карточки выстраиваются в 1 ряд на всю ширину (как по центру макета) */
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .dish-card {
+        min-height: auto;
+    }
+
+    .footer__main {
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
+/* --- МОБИЛЬНЫЕ (До 480px) --- */
+@media (max-width: 480px) {
+    .header {
+        height: 64px;
+    }
+
+    /* На мобильном картинка ужимается вправо, а текст слева, текст описания скрыт */
+    .dish-card {
+        padding: 12px;
+    }
+    
+    .dish-card h3 {
+        font-size: 14px;
+    }
+
+    .dish-card__desc {
+        display: none; /* Скрываем описание блюда на мобильных для экономии места */
+    }
+
+    .dish-card__img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}

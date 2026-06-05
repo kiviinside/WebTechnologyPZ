@@ -1,0 +1,276 @@
+/* Базовый сброс и настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* --- CSS GRID LAYOUT --- */
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "main aside"
+        "footer footer";
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+    
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Привязка элементов к областям сетки */
+.site-header {
+    grid-area: header;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.site-main {
+    grid-area: main;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.site-aside {
+    grid-area: aside;
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 8px;
+    align-self: start;
+    max-height: fit-content;
+}
+
+.site-footer {
+    grid-area: footer;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* --- Навигация --- */
+.top-nav ul, .footer-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.top-nav a, .footer-nav a {
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.footer-nav a {
+    color: #ccc;
+}
+
+.top-nav a:hover, .footer-nav a:hover {
+    color: #ff0000;
+}
+
+.artist-photo {
+    max-width: 200px;
+    border-radius: 50%;
+    border: 3px solid #333;
+    margin-top: 10px;
+}
+
+/* --- Стили aside --- */
+.site-aside h2 {
+    margin-bottom: 15px;
+    color: #0056b3;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 8px;
+}
+
+.site-aside h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #E70000;
+    font-size: 1.1em;
+}
+
+.site-aside h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.site-aside p {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    text-align: justify;
+}
+
+/* --- Имитация картин Мондриана --- */
+.painting-section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.painting-section h3 {
+    margin-bottom: 15px;
+}
+
+.mondrian-grid {
+    display: grid;
+    gap: 4px;
+    background-color: #000;
+    border: 4px solid #000;
+    margin: 0 auto;
+}
+
+/* Первая картина (4x5) */
+.art-1 {
+    grid-template-columns: 1fr 1fr 1.5fr 0.5fr;
+    grid-template-rows: 0.7fr 0.7fr 1fr 0.5fr 0.9fr;
+    width: 400px;
+    height: 400px;
+    grid-template-areas:
+        "red-1   white-1 white-1 white-2"
+        "white-3 white-3 blue-1  blue-1"
+        "white-4 white-4 blue-1  blue-1"
+        "black-1 black-1 blue-1  blue-1"
+        "yellow-1 white-5 red-2  yellow-2";
+}
+
+.art-1 .red-1    { grid-area: red-1; }
+.art-1 .white-1  { grid-area: white-1; }
+.art-1 .white-2  { grid-area: white-2; }
+.art-1 .white-3  { grid-area: white-3; }
+.art-1 .white-4  { grid-area: white-4; }
+.art-1 .white-5  { grid-area: white-5; }
+.art-1 .blue-1   { grid-area: blue-1; }
+.art-1 .black-1  { grid-area: black-1; }
+.art-1 .yellow-1 { grid-area: yellow-1; }
+.art-1 .yellow-2 { grid-area: yellow-2; }
+.art-1 .red-2    { grid-area: red-2; }
+
+/* Вторая картина (4x3) */
+.art-2 {
+    grid-template-columns: 0.5fr 1fr 0.8fr 0.8fr;
+    grid-template-rows: 0.15fr 1.2fr 0.8fr 0.2fr;
+    width: 400px;
+    height: 400px;
+    grid-template-areas:
+        "white-top white-top yellow-top yellow-top"
+        "red-1     red-1     yellow-1   yellow-1"
+        "red-1     red-1     white-1    white-2"
+        "black-1   white-3   white-4    white-4";
+}
+
+.art-2 .white-top  { grid-area: white-top; }
+.art-2 .yellow-top { grid-area: yellow-top; }
+.art-2 .red-1      { grid-area: red-1; }
+.art-2 .yellow-1   { grid-area: yellow-1; }
+.art-2 .white-1    { grid-area: white-1; }
+.art-2 .white-2    { grid-area: white-2; }
+.art-2 .black-1    { grid-area: black-1; }
+.art-2 .white-3    { grid-area: white-3; }
+.art-2 .white-4    { grid-area: white-4; }
+
+/* Третья картина (4x4) */
+.art-3 {
+    grid-template-columns: 0.5fr 0.7fr 0.15fr 1.65fr;
+    grid-template-rows: 0.1fr 0.9fr 0.9fr 0.1fr;
+    width: 400px;
+    height: 400px;
+    grid-template-areas:
+        "white-top  white-top  white-top  black-corner"
+        "white-1    white-2    white-2    blue-1"
+        "yellow-1   yellow-1   yellow-1   blue-1"
+        "white-3    black-1    black-1    white-4";
+}
+
+.art-3 .white-top    { grid-area: white-top; }
+.art-3 .black-corner { grid-area: black-corner; }
+.art-3 .white-1      { grid-area: white-1; }
+.art-3 .white-2      { grid-area: white-2; }
+.art-3 .yellow-1     { grid-area: yellow-1; }
+.art-3 .blue-1       { grid-area: blue-1; }
+.art-3 .white-3      { grid-area: white-3; }
+.art-3 .black-1      { grid-area: black-1; }
+.art-3 .white-4      { grid-area: white-4; }
+
+/* Четвёртая картина (5x5) */
+.art-4 {
+    grid-template-columns: 1.3fr 0.7fr 0.7fr 0.9fr 0.5fr;
+    grid-template-rows: 0.5fr 0.8fr 0.3fr 0.9fr 0.4fr;
+    width: 400px;
+    height: 400px;
+    grid-template-areas:
+        "red-1    red-1    yellow-top yellow-top red-2"
+        "red-1    red-1    white-1    white-2    red-2"
+        "white-3  white-3  white-3    white-3    white-4"
+        "white-5  white-5  blue-1     blue-1     white-6"
+        "white-7  black-1  blue-1     blue-1     yellow-2";
+}
+
+.art-4 .red-1      { grid-area: red-1; }
+.art-4 .yellow-top { grid-area: yellow-top; }
+.art-4 .red-2      { grid-area: red-2; }
+.art-4 .white-1    { grid-area: white-1; }
+.art-4 .white-2    { grid-area: white-2; }
+.art-4 .white-3    { grid-area: white-3; }
+.art-4 .white-4    { grid-area: white-4; }
+.art-4 .white-5    { grid-area: white-5; }
+.art-4 .blue-1     { grid-area: blue-1; }
+.art-4 .white-6    { grid-area: white-6; }
+.art-4 .white-7    { grid-area: white-7; }
+.art-4 .black-1    { grid-area: black-1; }
+.art-4 .yellow-2   { grid-area: yellow-2; }
+
+/* Цвета Мондриана */
+.mondrian-grid div {
+    width: 100%;
+    height: 100%;
+}
+
+.red    { background-color: #E70000; }
+.blue   { background-color: #004D9F; }
+.yellow { background-color: #FFD500; }
+.white  { background-color: #FFFFFF; }
+.black  { background-color: #000000; }
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-areas:
+            "header"
+            "main"
+            "aside"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .top-nav ul, .footer-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}

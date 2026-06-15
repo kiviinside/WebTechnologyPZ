@@ -1,0 +1,304 @@
+/* Общие стили для оформления страницы и демонстрационных зон */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Стили для серых пунктирных рамок под каждое задание */
+.task-box {
+    background: #fff;
+    border: 1px dashed #777;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+/* Контейнеры для изоляции траекторий движения элементов */
+.field-horizontal {
+    position: relative;
+    height: 60px;
+    width: 100%;
+}
+
+.field-bg {
+    height: 160px;
+    width: 100%;
+}
+
+.field-square {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    overflow: hidden; /* Перенесено из исходного кода body для изоляции */
+}
+
+.no-border {
+    border: none;
+}
+
+
+/* ==========================================================================
+   Блок 1. Движение (из исходного кода)
+   ========================================================================== */
+@keyframes anim {
+    from { margin-left: 3px; }
+    to { margin-left: 500px; }
+}
+
+#d1 {
+    animation: anim 4s 3;
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+}
+
+
+/* ==========================================================================
+   Блок 2. Бесконечное движение (сгенерировано на базе Блока 1)
+   ========================================================================== */
+#d2 {
+    animation: anim 4s infinite; /* Изменено количество повторов на infinite */
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+}
+
+
+/* ==========================================================================
+   Блок 3. Смена фона (сгенерировано на основе скриншота)
+   ========================================================================== */
+@keyframes bgChange {
+    0%, 100% { background-color: transparent; }
+    50% { background-color: #ff3333; }
+}
+
+#d3 {
+    width: 200px;
+    height: 150px;
+    border: 1px solid red;
+    animation: bgChange 4s infinite;
+}
+
+
+/* ==========================================================================
+   Блок 4. Движение по квадрату (из исходного кода)
+   ========================================================================== */
+@keyframes animSquare {
+    0% { margin-left: 0%; margin-top: 0%; }
+    25% { margin-left: 50%; margin-top: 0%; }
+    50% { margin-left: 50%; margin-top: 10%; } /* Уменьшено с 20% для компактности внутри блока */
+    75% { margin-left: 0%; margin-top: 10%; }
+    100% { margin-left: 0%; margin-top: 0%; }
+}
+
+#d4 {
+    -webkit-animation: animSquare 8s linear 30;
+    animation: animSquare 8s linear 30;
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+}
+
+
+/* ==========================================================================
+   Блок 5. Движение по квадрату и смена фона (комбинация Блока 3 и 4)
+   ========================================================================== */
+@keyframes animSquareBg {
+    0% { margin-left: 0%; margin-top: 0%; background-color: transparent; }
+    25% { margin-left: 50%; margin-top: 0%; }
+    50% { margin-left: 50%; margin-top: 10%; background-color: #ff3333; }
+    75% { margin-left: 0%; margin-top: 10%; }
+    100% { margin-left: 0%; margin-top: 0%; background-color: transparent; }
+}
+
+#d5 {
+    animation: animSquareBg 8s linear infinite;
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+}
+
+
+/* ==========================================================================
+   Блок 6. Движение туда-сюда (0%, 50%, 100%) (сгенерировано)
+   ========================================================================== */
+@keyframes backAndForth {
+    0% { margin-left: 0px; }
+    50% { margin-left: 500px; }
+    100% { margin-left: 0px; }
+}
+
+#d6 {
+    animation: backAndForth 6s linear infinite;
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+}
+
+
+/* ==========================================================================
+   Блок 6. Движение туда-сюда через alternate (сгенерировано)
+   ========================================================================== */
+@keyframes toEnd {
+    from { margin-left: 0px; }
+    to { margin-left: 500px; }
+}
+
+#d7 {
+    animation: toEnd 3s linear infinite alternate; /* Использование alternate */
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+}
+
+
+/* ==========================================================================
+   Блок 7. Индикатор (из исходного кода с адаптацией под два варианта)
+   ========================================================================== */
+@keyframes test {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+/* Задание 8: На всю ширину обертки */
+#wrapper-ind1 {
+    margin: 0px auto;
+    width: 50%;
+    height: 30px;
+    border: 1px solid red;
+}
+#test-ind1 {
+    background: red;
+    width: 0%;
+    height: 30px;
+    -webkit-animation: test 5s linear 1 forwards;
+    animation: test 5s linear 1 forwards;
+}
+
+/* Задание 9: Заполнение останавливается на 70% (имитация скриншота) */
+@keyframes test-partial {
+    0% { width: 0%; }
+    100% { width: 70%; }
+}
+#wrapper-ind2 {
+    margin: 0px auto;
+    width: 50%;
+    height: 30px;
+    border: 1px solid red;
+}
+#test-ind2 {
+    background: red;
+    width: 0%;
+    height: 30px;
+    animation: test-partial 5s linear 1 forwards;
+}
+
+
+/* ==========================================================================
+   Блок 8. Пауза при наведении (animation-play-state)
+   ========================================================================== */
+
+/* Задание 10: Анимация идет только при наведении на сам элемент */
+#d10 {
+    animation: toEnd 4s linear infinite;
+    animation-play-state: paused; /* По умолчанию стоит на паузе */
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+}
+#d10:hover {
+    animation-play-state: running; /* Запуск при наведении */
+}
+
+/* Задание 11: Анимация синего блока при наведении на красный блок */
+.field-hover-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.trigger-block {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid red;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+}
+#d11 {
+    animation: toEnd 4s linear infinite;
+    animation-play-state: paused;
+    width: 200px;
+    height: 50px;
+    border: 1px solid blue; /* Синий блок по образцу */
+}
+/* При наведении на триггер меняем состояние анимации соседнего блока */
+.trigger-block:hover + .no-border #d11 {
+    animation-play-state: running;
+}
+
+
+/* ==========================================================================
+   Блок 9. Падающий мячик (из исходного кода)
+   ========================================================================== */
+@keyframes bouncing {
+    40%, 70%, 90% {
+        animation-timing-function: ease-out;
+        bottom: 0;
+    }
+    0% {
+        bottom: 200px;
+        left: 0;
+        animation-timing-function: ease-in;
+    }
+    55% {
+        bottom: 50px;
+        animation-timing-function: ease-in;
+    }
+    80% {
+        bottom: 25px;
+        animation-timing-function: ease-in;
+    }
+    95% {
+        bottom: 10px;
+        animation-timing-function: ease-in;
+    }
+    100% {
+        left: 110px;
+        bottom: 0;
+        animation-timing-function: ease-out;
+    }
+}
+
+#wrapper-ball {
+    margin: 0px auto;
+    width: 220px;
+    height: 220px;
+    border: 1px solid red;
+    position: relative;
+}
+
+#ball {
+    background: red;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    position: absolute;
+    animation: bouncing 5s infinite;
+}

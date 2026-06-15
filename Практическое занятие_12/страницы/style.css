@@ -157,7 +157,7 @@ body{
 
 #grid12{
     display: grid;
-    grid-template: repeat(3, 1fr) / 1fr 1.5fr;  /* 3 ряда, 2 колонки (правая шире) */
+    grid-template: repeat(3, 1fr) / 1fr 1.5fr; 
     border: 2px solid black;
     padding: 10px;
     width: 500px;
@@ -173,7 +173,7 @@ body{
 #grid12 > .elem1{ grid-row: 1 / 2; grid-column: 1 / 2; }
 #grid12 > .elem2{ grid-row: 2 / 3; grid-column: 1 / 2; }
 #grid12 > .elem3{ grid-row: 1 / 2; grid-column: 2 / 3; }
-#grid12 > .elem4{ grid-row: 2 / 4; grid-column: 2 / 3; }  /* span 2 rows */
+#grid12 > .elem4{ grid-row: 2 / 4; grid-column: 2 / 3; }  
 #grid12 > .elem5{ grid-row: 3 / 4; grid-column: 1 / 2; }
 
 #grid13{

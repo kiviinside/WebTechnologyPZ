@@ -303,3 +303,85 @@ header {
     width: 16px;
     height: 16px;
 }
+
+
+/* =========================================
+   АДАПТИВНОСТЬ (МЕДИА-ЗАПРОСЫ)
+   ========================================= */
+
+/* --- ПЛАНШЕТ (До 768px) --- */
+@media (max-width: 768px) {
+    .restaurant-hero {
+    padding: auto;
+}
+    
+    .restaurant-card {
+        max-width: 100%;
+        box-shadow: none;
+        padding: 24px 8px;
+        text-align: center;
+    }
+    
+    .restaurant-card h1 {
+        font-size: 28px;
+    }
+    
+    .restaurant-card__meta {
+        align-items: center;
+    }
+    
+    .restaurant-card__time {
+        align-self: center;
+    }
+
+    .menu-categories__inner {
+        gap: 24px;
+        padding: 16px 8px;
+    }
+
+    /* На планшете карточки выстраиваются в 1 ряд на всю ширину (как по центру макета) */
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .dish-card {
+        min-height: auto;
+    }
+
+    .footer__main {
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
+/* --- МОБИЛЬНЫЕ (До 480px) --- */
+@media (max-width: 480px) {
+    .header {
+        height: 64px;
+    }
+
+    /* На мобильном картинка ужимается вправо, а текст слева, текст описания скрыт */
+    .dish-card {
+        padding: 12px;
+    }
+    
+    .dish-card h3 {
+        font-size: 14px;
+    }
+
+    .dish-card__desc {
+        display: none; /* Скрываем описание блюда на мобильных для экономии места */
+    }
+
+    .dish-card__img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}

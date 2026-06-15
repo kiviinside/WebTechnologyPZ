@@ -1,276 +1,310 @@
-/* Базовый сброс и настройки */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
     color: #333;
 }
 
-/* --- CSS GRID LAYOUT --- */
-.grid-container {
+.page {
     display: grid;
-    grid-template-areas:
-        "header header"
-        "main aside"
-        "footer footer";
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: auto 1fr auto;
-    gap: 20px;
-    
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    grid-template:
+        "header header header" auto 
+        " main  main  aside  " 1fr
+        "footer footer footer" auto
+        / 2fr 50px 350px;
     min-height: 100vh;
+    gap: 16px;
+    padding: 16px;
 }
 
-/* Привязка элементов к областям сетки */
-.site-header {
+header {
     grid-area: header;
-    text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: #fff;
+    padding: 24px 16px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    text-align: center;    
+    gap: 16px;              
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.site-main {
-    grid-area: main;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+header img {
+    width: 150px;
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 100px;
 }
 
-.site-aside {
-    grid-area: aside;
-    background-color: #e9ecef;
-    padding: 20px;
-    border-radius: 8px;
-    align-self: start;
-    max-height: fit-content;
+header h1 {
+    font-size: 1.8rem;
+    color: #222;
+    margin: 0;
 }
 
-.site-footer {
-    grid-area: footer;
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-/* --- Навигация --- */
-.top-nav ul, .footer-nav ul {
+nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 15px;
+    gap: 20px;
+    margin: 0;      
+    padding: 0;    
 }
 
-.top-nav a, .footer-nav a {
+nav a {
     text-decoration: none;
-    color: #0056b3;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.footer-nav a {
-    color: #ccc;
-}
-
-.top-nav a:hover, .footer-nav a:hover {
-    color: #ff0000;
-}
-
-.artist-photo {
-    max-width: 200px;
-    border-radius: 50%;
-    border: 3px solid #333;
-    margin-top: 10px;
-}
-
-/* --- Стили aside --- */
-.site-aside h2 {
-    margin-bottom: 15px;
-    color: #0056b3;
-    border-bottom: 2px solid #0056b3;
-    padding-bottom: 8px;
-}
-
-.site-aside h3 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    color: #E70000;
-    font-size: 1.1em;
-}
-
-.site-aside h4 {
-    margin-top: 15px;
-    margin-bottom: 5px;
-    color: #333;
-    font-size: 1em;
+    color: #0066cc;
     font-weight: bold;
 }
 
-.site-aside p {
-    margin-bottom: 10px;
-    font-size: 0.95em;
-    text-align: justify;
+nav a:hover {
+    text-decoration: underline;
 }
 
-/* --- Имитация картин Мондриана --- */
-.painting-section {
-    margin-bottom: 40px;
+h2 {
     text-align: center;
 }
 
-.painting-section h3 {
-    margin-bottom: 15px;
-}
-
-.mondrian-grid {
+main { 
+    flex: 1;
+    margin: 0 10px;
+    background-color: #f9f9f9;
     display: grid;
-    gap: 4px;
-    background-color: #000;
-    border: 4px solid #000;
-    margin: 0 auto;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
 }
 
-/* Первая картина (4x5) */
-.art-1 {
-    grid-template-columns: 1fr 1fr 1.5fr 0.5fr;
-    grid-template-rows: 0.7fr 0.7fr 1fr 0.5fr 0.9fr;
-    width: 400px;
-    height: 400px;
-    grid-template-areas:
-        "red-1   white-1 white-1 white-2"
-        "white-3 white-3 blue-1  blue-1"
-        "white-4 white-4 blue-1  blue-1"
-        "black-1 black-1 blue-1  blue-1"
-        "yellow-1 white-5 red-2  yellow-2";
+article {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
 }
 
-.art-1 .red-1    { grid-area: red-1; }
-.art-1 .white-1  { grid-area: white-1; }
-.art-1 .white-2  { grid-area: white-2; }
-.art-1 .white-3  { grid-area: white-3; }
-.art-1 .white-4  { grid-area: white-4; }
-.art-1 .white-5  { grid-area: white-5; }
-.art-1 .blue-1   { grid-area: blue-1; }
-.art-1 .black-1  { grid-area: black-1; }
-.art-1 .yellow-1 { grid-area: yellow-1; }
-.art-1 .yellow-2 { grid-area: yellow-2; }
-.art-1 .red-2    { grid-area: red-2; }
-
-/* Вторая картина (4x3) */
-.art-2 {
-    grid-template-columns: 0.5fr 1fr 0.8fr 0.8fr;
-    grid-template-rows: 0.15fr 1.2fr 0.8fr 0.2fr;
-    width: 400px;
-    height: 400px;
-    grid-template-areas:
-        "white-top white-top yellow-top yellow-top"
-        "red-1     red-1     yellow-1   yellow-1"
-        "red-1     red-1     white-1    white-2"
-        "black-1   white-3   white-4    white-4";
+section {
+    margin-bottom: 32px;
 }
 
-.art-2 .white-top  { grid-area: white-top; }
-.art-2 .yellow-top { grid-area: yellow-top; }
-.art-2 .red-1      { grid-area: red-1; }
-.art-2 .yellow-1   { grid-area: yellow-1; }
-.art-2 .white-1    { grid-area: white-1; }
-.art-2 .white-2    { grid-area: white-2; }
-.art-2 .black-1    { grid-area: black-1; }
-.art-2 .white-3    { grid-area: white-3; }
-.art-2 .white-4    { grid-area: white-4; }
-
-/* Третья картина (4x4) */
-.art-3 {
-    grid-template-columns: 0.5fr 0.7fr 0.15fr 1.65fr;
-    grid-template-rows: 0.1fr 0.9fr 0.9fr 0.1fr;
-    width: 400px;
-    height: 400px;
-    grid-template-areas:
-        "white-top  white-top  white-top  black-corner"
-        "white-1    white-2    white-2    blue-1"
-        "yellow-1   yellow-1   yellow-1   blue-1"
-        "white-3    black-1    black-1    white-4";
+aside {
+    grid-area: aside;
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.art-3 .white-top    { grid-area: white-top; }
-.art-3 .black-corner { grid-area: black-corner; }
-.art-3 .white-1      { grid-area: white-1; }
-.art-3 .white-2      { grid-area: white-2; }
-.art-3 .yellow-1     { grid-area: yellow-1; }
-.art-3 .blue-1       { grid-area: blue-1; }
-.art-3 .white-3      { grid-area: white-3; }
-.art-3 .black-1      { grid-area: black-1; }
-.art-3 .white-4      { grid-area: white-4; }
-
-/* Четвёртая картина (5x5) */
-.art-4 {
-    grid-template-columns: 1.3fr 0.7fr 0.7fr 0.9fr 0.5fr;
-    grid-template-rows: 0.5fr 0.8fr 0.3fr 0.9fr 0.4fr;
-    width: 400px;
-    height: 400px;
-    grid-template-areas:
-        "red-1    red-1    yellow-top yellow-top red-2"
-        "red-1    red-1    white-1    white-2    red-2"
-        "white-3  white-3  white-3    white-3    white-4"
-        "white-5  white-5  blue-1     blue-1     white-6"
-        "white-7  black-1  blue-1     blue-1     yellow-2";
+aside h2 {
+    margin-bottom: 16px;
+    font-size: 1.3rem;
+    color: #444;
 }
 
-.art-4 .red-1      { grid-area: red-1; }
-.art-4 .yellow-top { grid-area: yellow-top; }
-.art-4 .red-2      { grid-area: red-2; }
-.art-4 .white-1    { grid-area: white-1; }
-.art-4 .white-2    { grid-area: white-2; }
-.art-4 .white-3    { grid-area: white-3; }
-.art-4 .white-4    { grid-area: white-4; }
-.art-4 .white-5    { grid-area: white-5; }
-.art-4 .blue-1     { grid-area: blue-1; }
-.art-4 .white-6    { grid-area: white-6; }
-.art-4 .white-7    { grid-area: white-7; }
-.art-4 .black-1    { grid-area: black-1; }
-.art-4 .yellow-2   { grid-area: yellow-2; }
-
-/* Цвета Мондриана */
-.mondrian-grid div {
-    width: 100%;
-    height: 100%;
+aside p {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
 }
 
-.red    { background-color: #E70000; }
-.blue   { background-color: #004D9F; }
-.yellow { background-color: #FFD500; }
-.white  { background-color: #FFFFFF; }
-.black  { background-color: #000000; }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
 
-/* Адаптивность */
-@media (max-width: 768px) {
-    .grid-container {
-        grid-template-areas:
-            "header"
-            "main"
-            "aside"
-            "footer";
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
+section {
+    display: flex;
+    justify-content: center;
+    column-gap: 0px;
+}
 
-    .top-nav ul, .footer-nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
+.mondrian-canvas {
+    width: 320px;
+    height: 320px;
+    background-color: black;
+    border: 7px solid black;
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    grid-template-rows: repeat(24, 1fr);
+    gap: 6px;
+    border-radius: 8px;
+}
+
+.bg-red {
+    background-color: #da251d;
+}
+.bg-blue {
+    background-color: #005f9e;
+}
+.bg-yellow {
+    background-color: #f4d000;
+}
+.bg-white {
+    background-color: #f4f4f4;
+}
+.bg-black {
+    background-color: #0a0a0a;
+}
+
+  /* Картина 1 */
+.p1-1 {
+    grid-area: 1 / 1 / 7 / 9;
+} /* Красный левый верх */
+.p1-2 {
+    grid-area: 1 / 9 / 4 / 14;
+} /* Белый верх */
+.p1-3 {
+    grid-area: 3 / 9 / 7 / 14;
+} /* Белый верх */
+.p1-4 {
+    grid-area: 1 / 14 / 7 / 21;
+} /* Белый широкий верх */
+.p1-5 {
+    grid-area: 1 / 21 / 11 / 25;
+} /* Белый правый край */
+.p1-6 {
+    grid-area: 7 / 1 / 11 / 9;
+} /* Белый под красным */
+.p1-7 {
+    grid-area: 11 / 1 / 16 / 9;
+} /* Белый левый центр */
+.p1-8 {
+    grid-area: 7 / 9 / 16 / 21;
+} /* Синий центр */
+.p1-9 {
+    grid-area: 16 / 1 / 19 / 9;
+} /* Черный левый */
+.p1-10 {
+    grid-area: 11 / 21 / 19 / 25;
+} /* Желтый правый край */
+.p1-11 {
+    grid-area: 19 / 1 / 25 / 4;
+  } /* Желтый левый низ */
+.p1-12 {
+    grid-area: 19 / 4 / 25 / 9;
+} /* Белый низ левее центра */
+.p1-13 {
+    grid-area: 16 / 9 / 25 / 21;
+} /* Красный нижний */
+.p1-14 {
+    grid-area: 19 / 21 / 25 / 25;
+} /* Белый правый низ */
+
+  /* Картина 2 */
+.p2-1 {
+    grid-area: 1 / 1 / 19 / 17;
+} /* Огромный красный */
+.p2-2 {
+    grid-area: 1 / 17 / 8 / 25;
+} /* Желтый верхний правый */
+.p2-3 {
+    grid-area: 8 / 17 / 19 / 21;
+} /* Белый правый 1 */
+.p2-4 {
+    grid-area: 8 / 21 / 19 / 25;
+} /* Белый правый 2 */
+.p2-5 {
+    grid-area: 19 / 1 / 25 / 5;
+} /* Черный левый низ */
+.p2-6 {
+    grid-area: 19 / 5 / 25 / 17;
+} /* Белый нижний центр */
+.p2-7 {
+    grid-area: 19 / 17 / 25 / 25;
+} /* Белый правый низ */
+
+  /* Картина 3 */
+.p3-1 {
+    grid-area: 1 / 1 / 4 / 6;
+} /* Белый 1 */
+.p3-2 {
+    grid-area: 1 / 5 / 4 / 9;
+} /* Белый 2 */
+.p3-3 {
+    grid-area: 4 / 1 / 14 / 5;
+} /* Белый 3 */
+.p3-4 {
+    grid-area: 4 / 5 / 14 / 9;
+} /* Белый 4 */
+.p3-5 {
+    grid-area: 14 / 1 / 21 / 9;
+} /* Желтый левый центр */
+.p3-6 {
+    grid-area: 21 / 1 / 25 / 5;
+} /* Белый левый низ */
+.p3-7 {
+    grid-area: 21 / 5 / 25 / 9;
+  } /* Черный низ */
+.p3-8 {
+    grid-area: 1 / 9 / 4 / 20;
+  } /* Белый верх над синим */
+.p3-9 {
+    grid-area: 1 / 20 / 4 / 25;
+  } /* Черный правый верх */
+.p3-10 {
+    grid-area: 4 / 9 / 21 / 25;
+  } /* Огромный синий */
+.p3-11 {
+    grid-area: 21 / 9 / 25 / 25;
+  } /* Белый низ широкий */
+
+  /* Картина 4 */
+.p4-1 {
+    grid-area: 1 / 1 / 15 / 8;
+  } /* Красный левый */
+.p4-2 {
+    grid-area: 15 / 1 / 19 / 8;
+  } /* Белый левый 1 */
+.p4-3 {
+    grid-area: 19 / 1 / 22 / 8;
+  } /* Белый левый 2 */
+.p4-4 {
+    grid-area: 22 / 1 / 25 / 8;
+  } /* Черный левый низ */
+.p4-5 {
+    grid-area: 1 / 8 / 5 / 21;
+  } /* Желтый верх центр */
+.p4-6 {
+    grid-area: 5 / 8 / 15 / 14;
+  } /* Белый центр 1 */
+.p4-7 {
+    grid-area: 5 / 14 / 15 / 21;
+  } /* Белый центр 2 */
+.p4-8 {
+    grid-area: 15 / 8 / 19 / 21;
+  } /* Белый центр низ */
+.p4-9 {
+    grid-area: 19 / 8 / 25 / 21;
+  } /* Синий нижний центр */
+.p4-10 {
+    grid-area: 1 / 21 / 13 / 25;
+  } /* Красный правый */
+.p4-11 {
+    grid-area: 13 / 21 / 22 / 25;
+  } /* Белый правый */
+.p4-12 {
+    grid-area: 22 / 21 / 25 / 25;
+} /* Желтый правый низ */
+
+footer {
+    grid-area: footer;
+    background: #333;
+    color: white;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+}
+
+footer nav ul {
+    display: flex;
+    gap: 16px;
+    margin-left: 700px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }

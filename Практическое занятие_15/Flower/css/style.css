@@ -93,3 +93,11 @@ header h1{
 .clear{
     clear:both;
 }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #666;
+    clear: both;
+}
